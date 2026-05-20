@@ -88,34 +88,6 @@ Due to file size limits, **raw `.mat` data and trained model weights are not tra
 ### Option A: Use provided files (if available)
 If you received this package with `data/*.mat` and `models/*.pth` included, place them in the corresponding directories.
 
-### Option B: Download original datasets
-- **PU**: Request from [C-PU bearing dataset](https://github.com/) or contact authors
-- **PHM**: [PHM Society 2009 Competition](https://github.com/)
-- **HUST**: [HUST-bearing dataset](https://github.com/)
 
-Place `.mat` files in `data/` and run `extract_stft_from_mat.py`.
-
-### Option C: Train from scratch
-After extracting STFT features, run `ERM_2d_all_mmd.py` for each task. Training takes ~13 minutes per task on a single GPU.
-
-## Results Summary
-
-| Dataset | Task Avg | Best Config |
-|---------|----------|-------------|
-| PU (4-class) | 97.40% | SpecAug + MMD λ=1.0 |
-| PHM (6-class) | 97.79% | SpecAug + MMD λ=1.0 (Task 1: λ=0.01) |
-| HUST (9-class) | 99.42% | SpecAug + MMD λ=1.0 |
-| **Overall 12-task avg** | **98.20%** | |
-
-## Key Finding: PHM Task 1 MMD Sensitivity
-
-PHM Task 1 (source=9,10,12 → target=11) is uniquely sensitive to MMD weight:
-- λ=1.0 → **22.17%** (feature collapse)
-- λ=0.5 → 71.58%
-- λ=0.1 → 76.33%
-- **λ=0.01 → 94.25%** ✅
-- λ=0.0 (pure ERM) → 92.33%
-
-**Recommendation**: For PHM Task 1 only, use MMD λ=0.01. All other tasks use λ=1.0.
 
 
