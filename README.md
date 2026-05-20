@@ -118,6 +118,4 @@ PHM Task 1 (source=9,10,12 → target=11) is uniquely sensitive to MMD weight:
 
 **Recommendation**: For PHM Task 1 only, use MMD λ=0.01. All other tasks use λ=1.0.
 
-## Citation
 
-Chao Zhao, Enrico Zio, Weiming Shen. "Domain Generalization for Cross-Domain Fault Diagnosis: an Application-oriented Perspective and a Benchmark Study." Reliability Engineering and System Safety, 2024.
