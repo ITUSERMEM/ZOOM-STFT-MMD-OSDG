@@ -1,0 +1,29 @@
+# Data and model weights (too large for GitHub)
+data/*.mat
+data/*.npy
+data/*_stft_224/
+models/*.pth
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
